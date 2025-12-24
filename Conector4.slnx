@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Conector4.General/Conector4.General.csproj" />
+  <Project Path="Conector4.Presence/Conector4.Presence.csproj" />
+  <Project Path="Conector4/Conector4.csproj" />
+</Solution>
