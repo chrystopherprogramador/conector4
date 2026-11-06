@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="Conector4.Control/Conector4.Control.csproj" Id="7dd1cb0a-db84-4f08-b0b7-d01057344ec2" />
   <Project Path="Conector4.General/Conector4.General.csproj" />
   <Project Path="Conector4.Presence/Conector4.Presence.csproj" />
   <Project Path="Conector4/Conector4.csproj" />

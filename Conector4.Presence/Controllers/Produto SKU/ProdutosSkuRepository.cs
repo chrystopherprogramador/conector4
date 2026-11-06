@@ -69,6 +69,11 @@ public class ProdutosSkuRepository
         {
             await using var cmd = new NpgsqlCommand(sql, conn);
 
+            if(item.Marca == "Texas Cent")
+            {
+                item.Marca = "TEXAS CENTER";
+            }
+
             cmd.Parameters.AddWithValue("status", (object?)item.Status ?? DBNull.Value);
             cmd.Parameters.AddWithValue("codigo", (object?)item.Codigo ?? DBNull.Value);
             cmd.Parameters.AddWithValue("sku", item.Sku);

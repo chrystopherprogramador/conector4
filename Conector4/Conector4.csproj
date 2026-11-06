@@ -14,12 +14,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="EPPlus" Version="7.5.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="ScottPlot" Version="5.1.57" />
     <PackageReference Include="ScottPlot.WinForms" Version="5.1.57" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Conector4.Control\Conector4.Control.csproj" />
     <ProjectReference Include="..\Conector4.Presence\Conector4.Presence.csproj" />
   </ItemGroup>
 

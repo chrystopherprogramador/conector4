@@ -12,6 +12,7 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using ScottPlot.WinForms;
+using Conector4.Formularios;
 namespace Conector4
 {
     public partial class MDI : Form
@@ -66,6 +67,7 @@ namespace Conector4
             cmbServicoMensageria.Items.Add("Presence.TabPrecoInd");
             cmbServicoMensageria.Items.Add("Presence.ProdutoSKU");
             cmbServicoMensageria.Items.Add("Presence.Produtos_Tamanho");
+            cmbServicoMensageria.Items.Add("Presence.TabFornecedores");
             await InitTimersFromDb();
             var ds = await fn.returnServico(); GridServico.DataSource = ds.Tables[0];
 
@@ -207,18 +209,31 @@ namespace Conector4
                 EmAndamento = kv.Value.InFlight
             }).ToList();
 
-            gridMetrics.AutoGenerateColumns = true;
-            gridMetrics.DataSource = rows;
+
+            try
+            {
+                gridMetrics.AutoGenerateColumns = true;
+                gridMetrics.DataSource = rows;
 
 
 
-            processados[index % 1800] = rows.Sum(r => r.Processados);
-            falhados[index % 1800] = rows.Sum(r => r.Falhados);
-            andamento[index % 1800] = rows.Sum(r => r.EmAndamento);
+                processados[index % 1800] = rows.Sum(r => r.Processados);
+                falhados[index % 1800] = rows.Sum(r => r.Falhados);
+                andamento[index % 1800] = rows.Sum(r => r.EmAndamento);
 
-            index++;
+                index++;
 
-            formsPlot.Refresh();
+                // Verifica se formsPlot foi inicializado antes de usar
+                if (formsPlot != null)
+                {
+                    formsPlot.Refresh();
+                }
+            }
+            catch (Exception ex)
+            {
+                await _logger.LogAsync("Error", $"Erro em tmTela_Tick: {ex.Message}");
+            }
+
 
 
 
@@ -421,6 +436,30 @@ namespace Conector4
         private void cmbStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void produtosSKUToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            importProduts form = new importProduts();
+            form.Show();
+        }
+
+        private void planilhaAPIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            importProductXls form = new importProductXls();
+            form.Show();
+        }
+
+        private void exportarDadosDeEPCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            exportaBaseEPC epcExp = new exportaBaseEPC();
+            epcExp.Show();
+        }
+
+        private void importarImagensToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            importImages importImages = new importImages();
+            importImages.Show();
         }
     }
 }

@@ -72,6 +72,21 @@
             tmRabiit = new System.Windows.Forms.Timer(components);
             tmTela = new System.Windows.Forms.Timer(components);
             tmRefreshLogs = new System.Windows.Forms.Timer(components);
+            menuStrip1 = new MenuStrip();
+            importaçãoToolStripMenuItem = new ToolStripMenuItem();
+            viaEXCELToolStripMenuItem = new ToolStripMenuItem();
+            produtosSKUToolStripMenuItem = new ToolStripMenuItem();
+            produtosToolStripMenuItem = new ToolStripMenuItem();
+            planilhaAPIToolStripMenuItem = new ToolStripMenuItem();
+            alteraçãoToolStripMenuItem = new ToolStripMenuItem();
+            marcasToolStripMenuItem = new ToolStripMenuItem();
+            deparToolStripMenuItem = new ToolStripMenuItem();
+            gruposToolStripMenuItem = new ToolStripMenuItem();
+            subGruposToolStripMenuItem = new ToolStripMenuItem();
+            eCsToolStripMenuItem = new ToolStripMenuItem();
+            exportarDadosDeEPCToolStripMenuItem = new ToolStripMenuItem();
+            dataViewToolStripMenuItem = new ToolStripMenuItem();
+            importarImagensToolStripMenuItem = new ToolStripMenuItem();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logo).BeginInit();
             tabControl.SuspendLayout();
@@ -85,6 +100,7 @@
             groupBox1.SuspendLayout();
             tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridMetrics).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -92,17 +108,19 @@
             panel1.BackColor = Color.FromArgb(224, 224, 224);
             panel1.Controls.Add(logo);
             panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 0);
+            panel1.Location = new Point(0, 30);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(228, 450);
+            panel1.Size = new Size(261, 570);
             panel1.TabIndex = 0;
             // 
             // logo
             // 
             logo.Image = Properties.Resources.ChatGPT_Image_19_de_dez__de_2025__10_47_48_removebg_preview;
-            logo.Location = new Point(-78, -87);
+            logo.Location = new Point(-89, -116);
+            logo.Margin = new Padding(3, 4, 3, 4);
             logo.Name = "logo";
-            logo.Size = new Size(384, 329);
+            logo.Size = new Size(439, 439);
             logo.SizeMode = PictureBoxSizeMode.Zoom;
             logo.TabIndex = 0;
             logo.TabStop = false;
@@ -114,10 +132,11 @@
             tabControl.Controls.Add(tabPage3);
             tabControl.Controls.Add(tabPage4);
             tabControl.Dock = DockStyle.Fill;
-            tabControl.Location = new Point(228, 0);
+            tabControl.Location = new Point(261, 30);
+            tabControl.Margin = new Padding(3, 4, 3, 4);
             tabControl.Name = "tabControl";
             tabControl.SelectedIndex = 0;
-            tabControl.Size = new Size(572, 450);
+            tabControl.Size = new Size(653, 570);
             tabControl.TabIndex = 1;
             // 
             // tabPage1
@@ -126,19 +145,21 @@
             tabPage1.Controls.Add(cmbServicoMensageria);
             tabPage1.Controls.Add(label1);
             tabPage1.Controls.Add(gridMensageria);
-            tabPage1.Location = new Point(4, 24);
+            tabPage1.Location = new Point(4, 29);
+            tabPage1.Margin = new Padding(3, 4, 3, 4);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(564, 422);
+            tabPage1.Padding = new Padding(3, 4, 3, 4);
+            tabPage1.Size = new Size(645, 537);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Mensageria";
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(274, 12);
+            btnBuscar.Location = new Point(313, 16);
+            btnBuscar.Margin = new Padding(3, 4, 3, 4);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(96, 32);
+            btnBuscar.Size = new Size(110, 43);
             btnBuscar.TabIndex = 3;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
@@ -149,17 +170,18 @@
             cmbServicoMensageria.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbServicoMensageria.FormattingEnabled = true;
             cmbServicoMensageria.Items.AddRange(new object[] { "Presece.TabPreco", "Presence.ProdutoSKU" });
-            cmbServicoMensageria.Location = new Point(57, 18);
+            cmbServicoMensageria.Location = new Point(65, 24);
+            cmbServicoMensageria.Margin = new Padding(3, 4, 3, 4);
             cmbServicoMensageria.Name = "cmbServicoMensageria";
-            cmbServicoMensageria.Size = new Size(211, 23);
+            cmbServicoMensageria.Size = new Size(241, 28);
             cmbServicoMensageria.TabIndex = 2;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(6, 21);
+            label1.Location = new Point(7, 28);
             label1.Name = "label1";
-            label1.Size = new Size(45, 15);
+            label1.Size = new Size(57, 20);
             label1.TabIndex = 1;
             label1.Text = "Serviço";
             // 
@@ -170,10 +192,12 @@
             gridMensageria.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             gridMensageria.BackgroundColor = Color.White;
             gridMensageria.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridMensageria.Location = new Point(6, 56);
+            gridMensageria.Location = new Point(7, 75);
+            gridMensageria.Margin = new Padding(3, 4, 3, 4);
             gridMensageria.Name = "gridMensageria";
             gridMensageria.ReadOnly = true;
-            gridMensageria.Size = new Size(550, 358);
+            gridMensageria.RowHeadersWidth = 51;
+            gridMensageria.Size = new Size(628, 447);
             gridMensageria.TabIndex = 0;
             // 
             // tabPage2
@@ -190,10 +214,11 @@
             tabPage2.Controls.Add(label4);
             tabPage2.Controls.Add(GridLogs);
             tabPage2.Controls.Add(pictureBox1);
-            tabPage2.Location = new Point(4, 24);
+            tabPage2.Location = new Point(4, 29);
+            tabPage2.Margin = new Padding(3, 4, 3, 4);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(564, 422);
+            tabPage2.Padding = new Padding(3, 4, 3, 4);
+            tabPage2.Size = new Size(645, 537);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Logs";
             tabPage2.UseVisualStyleBackColor = true;
@@ -201,9 +226,10 @@
             // chcRefresh
             // 
             chcRefresh.AutoSize = true;
-            chcRefresh.Location = new Point(367, 13);
+            chcRefresh.Location = new Point(419, 17);
+            chcRefresh.Margin = new Padding(3, 4, 3, 4);
             chcRefresh.Name = "chcRefresh";
-            chcRefresh.Size = new Size(109, 19);
+            chcRefresh.Size = new Size(135, 24);
             chcRefresh.TabIndex = 12;
             chcRefresh.Text = "Refresh Aut (5s)";
             chcRefresh.UseVisualStyleBackColor = true;
@@ -211,25 +237,27 @@
             // 
             // txtSize
             // 
-            txtSize.Location = new Point(329, 10);
+            txtSize.Location = new Point(376, 13);
+            txtSize.Margin = new Padding(3, 4, 3, 4);
             txtSize.Name = "txtSize";
-            txtSize.Size = new Size(37, 23);
+            txtSize.Size = new Size(42, 27);
             txtSize.TabIndex = 5;
             txtSize.Text = "50";
             // 
             // txtKeyword
             // 
-            txtKeyword.Location = new Point(250, 39);
+            txtKeyword.Location = new Point(286, 52);
+            txtKeyword.Margin = new Padding(3, 4, 3, 4);
             txtKeyword.Name = "txtKeyword";
-            txtKeyword.Size = new Size(222, 23);
+            txtKeyword.Size = new Size(253, 27);
             txtKeyword.TabIndex = 7;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(90, 42);
+            label6.Location = new Point(103, 56);
             label6.Name = "label6";
-            label6.Size = new Size(39, 15);
+            label6.Size = new Size(49, 20);
             label6.TabIndex = 11;
             label6.Text = "Status";
             // 
@@ -237,35 +265,38 @@
             // 
             cmbStatus.FormattingEnabled = true;
             cmbStatus.Items.AddRange(new object[] { "Info", "Warning", "Error", "Assembly", "Payload" });
-            cmbStatus.Location = new Point(135, 39);
+            cmbStatus.Location = new Point(154, 52);
+            cmbStatus.Margin = new Padding(3, 4, 3, 4);
             cmbStatus.Name = "cmbStatus";
-            cmbStatus.Size = new Size(109, 23);
+            cmbStatus.Size = new Size(124, 28);
             cmbStatus.TabIndex = 6;
             cmbStatus.SelectedIndexChanged += cmbStatus_SelectedIndexChanged;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(223, 13);
+            label5.Location = new Point(255, 17);
             label5.Name = "label5";
-            label5.Size = new Size(12, 15);
+            label5.Size = new Size(15, 20);
             label5.TabIndex = 9;
             label5.Text = "-";
             // 
             // txtFinal
             // 
-            txtFinal.Location = new Point(241, 10);
+            txtFinal.Location = new Point(275, 13);
+            txtFinal.Margin = new Padding(3, 4, 3, 4);
             txtFinal.Mask = "00/00/0000";
             txtFinal.Name = "txtFinal";
-            txtFinal.Size = new Size(82, 23);
+            txtFinal.Size = new Size(93, 27);
             txtFinal.TabIndex = 4;
             txtFinal.ValidatingType = typeof(DateTime);
             // 
             // btnBuscarLog
             // 
-            btnBuscarLog.Location = new Point(478, 6);
+            btnBuscarLog.Location = new Point(546, 8);
+            btnBuscarLog.Margin = new Padding(3, 4, 3, 4);
             btnBuscarLog.Name = "btnBuscarLog";
-            btnBuscarLog.Size = new Size(75, 54);
+            btnBuscarLog.Size = new Size(86, 72);
             btnBuscarLog.TabIndex = 8;
             btnBuscarLog.Text = "Buscar";
             btnBuscarLog.UseVisualStyleBackColor = true;
@@ -273,19 +304,20 @@
             // 
             // txtInicial
             // 
-            txtInicial.Location = new Point(135, 10);
+            txtInicial.Location = new Point(154, 13);
+            txtInicial.Margin = new Padding(3, 4, 3, 4);
             txtInicial.Mask = "00/00/0000";
             txtInicial.Name = "txtInicial";
-            txtInicial.Size = new Size(82, 23);
+            txtInicial.Size = new Size(93, 27);
             txtInicial.TabIndex = 3;
             txtInicial.ValidatingType = typeof(DateTime);
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(90, 13);
+            label4.Location = new Point(103, 17);
             label4.Name = "label4";
-            label4.Size = new Size(31, 15);
+            label4.Size = new Size(41, 20);
             label4.TabIndex = 2;
             label4.Text = "Data";
             // 
@@ -296,18 +328,21 @@
             GridLogs.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             GridLogs.BackgroundColor = Color.White;
             GridLogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GridLogs.Location = new Point(3, 68);
+            GridLogs.Location = new Point(3, 91);
+            GridLogs.Margin = new Padding(3, 4, 3, 4);
             GridLogs.Name = "GridLogs";
             GridLogs.ReadOnly = true;
-            GridLogs.Size = new Size(550, 346);
+            GridLogs.RowHeadersWidth = 51;
+            GridLogs.Size = new Size(629, 461);
             GridLogs.TabIndex = 1;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.png_clipart_logo_elasticsearch_scalable_graphics_distributed_database_text_logo;
-            pictureBox1.Location = new Point(6, 6);
+            pictureBox1.Location = new Point(7, 8);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(83, 58);
+            pictureBox1.Size = new Size(95, 77);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -316,9 +351,10 @@
             // 
             tabPage3.Controls.Add(GridServico);
             tabPage3.Controls.Add(groupBox1);
-            tabPage3.Location = new Point(4, 24);
+            tabPage3.Location = new Point(4, 29);
+            tabPage3.Margin = new Padding(3, 4, 3, 4);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(564, 422);
+            tabPage3.Size = new Size(645, 537);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Serviços";
             tabPage3.UseVisualStyleBackColor = true;
@@ -330,10 +366,12 @@
             GridServico.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             GridServico.BackgroundColor = Color.White;
             GridServico.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GridServico.Location = new Point(3, 152);
+            GridServico.Location = new Point(3, 203);
+            GridServico.Margin = new Padding(3, 4, 3, 4);
             GridServico.Name = "GridServico";
             GridServico.ReadOnly = true;
-            GridServico.Size = new Size(550, 262);
+            GridServico.RowHeadersWidth = 51;
+            GridServico.Size = new Size(629, 349);
             GridServico.TabIndex = 1;
             // 
             // groupBox1
@@ -351,18 +389,21 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(txtNomeServico);
             groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(3, 3);
+            groupBox1.Location = new Point(3, 4);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(553, 143);
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(632, 191);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Cadastro";
             // 
             // btnRefreshSer
             // 
-            btnRefreshSer.Location = new Point(425, 17);
+            btnRefreshSer.Location = new Point(486, 23);
+            btnRefreshSer.Margin = new Padding(3, 4, 3, 4);
             btnRefreshSer.Name = "btnRefreshSer";
-            btnRefreshSer.Size = new Size(119, 29);
+            btnRefreshSer.Size = new Size(136, 39);
             btnRefreshSer.TabIndex = 11;
             btnRefreshSer.Text = "Refresh";
             btnRefreshSer.UseVisualStyleBackColor = true;
@@ -372,16 +413,18 @@
             // 
             txtCodigo.BorderStyle = BorderStyle.FixedSingle;
             txtCodigo.Enabled = false;
-            txtCodigo.Location = new Point(330, 17);
+            txtCodigo.Location = new Point(377, 23);
+            txtCodigo.Margin = new Padding(3, 4, 3, 4);
             txtCodigo.Name = "txtCodigo";
-            txtCodigo.Size = new Size(89, 23);
+            txtCodigo.Size = new Size(101, 27);
             txtCodigo.TabIndex = 10;
             // 
             // btnGravar
             // 
-            btnGravar.Location = new Point(330, 98);
+            btnGravar.Location = new Point(377, 131);
+            btnGravar.Margin = new Padding(3, 4, 3, 4);
             btnGravar.Name = "btnGravar";
-            btnGravar.Size = new Size(117, 31);
+            btnGravar.Size = new Size(134, 41);
             btnGravar.TabIndex = 5;
             btnGravar.Text = "&Gravar";
             btnGravar.UseVisualStyleBackColor = true;
@@ -390,34 +433,36 @@
             // txtMetodo
             // 
             txtMetodo.BorderStyle = BorderStyle.FixedSingle;
-            txtMetodo.Location = new Point(130, 104);
+            txtMetodo.Location = new Point(149, 139);
+            txtMetodo.Margin = new Padding(3, 4, 3, 4);
             txtMetodo.Name = "txtMetodo";
-            txtMetodo.Size = new Size(194, 23);
+            txtMetodo.Size = new Size(221, 27);
             txtMetodo.TabIndex = 4;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(6, 106);
+            label8.Location = new Point(7, 141);
             label8.Name = "label8";
-            label8.Size = new Size(52, 15);
+            label8.Size = new Size(65, 20);
             label8.TabIndex = 7;
             label8.Text = "Método:";
             // 
             // txtClasse
             // 
             txtClasse.BorderStyle = BorderStyle.FixedSingle;
-            txtClasse.Location = new Point(130, 75);
+            txtClasse.Location = new Point(149, 100);
+            txtClasse.Margin = new Padding(3, 4, 3, 4);
             txtClasse.Name = "txtClasse";
-            txtClasse.Size = new Size(142, 23);
+            txtClasse.Size = new Size(162, 27);
             txtClasse.TabIndex = 3;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(6, 77);
+            label7.Location = new Point(7, 103);
             label7.Name = "label7";
-            label7.Size = new Size(43, 15);
+            label7.Size = new Size(53, 20);
             label7.TabIndex = 5;
             label7.Text = "Classe:";
             // 
@@ -425,9 +470,10 @@
             // 
             chAtivoServico.AutoSize = true;
             chAtivoServico.FlatStyle = FlatStyle.Flat;
-            chAtivoServico.Location = new Point(195, 46);
+            chAtivoServico.Location = new Point(223, 61);
+            chAtivoServico.Margin = new Padding(3, 4, 3, 4);
             chAtivoServico.Name = "chAtivoServico";
-            chAtivoServico.Size = new Size(51, 19);
+            chAtivoServico.Size = new Size(62, 24);
             chAtivoServico.TabIndex = 2;
             chAtivoServico.Text = "Ativo";
             chAtivoServico.UseVisualStyleBackColor = true;
@@ -435,17 +481,18 @@
             // textBox1
             // 
             textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Location = new Point(130, 46);
+            textBox1.Location = new Point(149, 61);
+            textBox1.Margin = new Padding(3, 4, 3, 4);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(59, 23);
+            textBox1.Size = new Size(67, 27);
             textBox1.TabIndex = 1;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(6, 48);
+            label3.Location = new Point(7, 64);
             label3.Name = "label3";
-            label3.Size = new Size(121, 15);
+            label3.Size = new Size(151, 20);
             label3.TabIndex = 2;
             label3.Text = "Time-Set (Segundos):";
             // 
@@ -453,17 +500,18 @@
             // 
             txtNomeServico.BorderStyle = BorderStyle.FixedSingle;
             txtNomeServico.CharacterCasing = CharacterCasing.Upper;
-            txtNomeServico.Location = new Point(130, 17);
+            txtNomeServico.Location = new Point(149, 23);
+            txtNomeServico.Margin = new Padding(3, 4, 3, 4);
             txtNomeServico.Name = "txtNomeServico";
-            txtNomeServico.Size = new Size(194, 23);
+            txtNomeServico.Size = new Size(221, 27);
             txtNomeServico.TabIndex = 0;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(6, 19);
+            label2.Location = new Point(7, 25);
             label2.Name = "label2";
-            label2.Size = new Size(101, 15);
+            label2.Size = new Size(127, 20);
             label2.TabIndex = 0;
             label2.Text = "Nome do Serviço:";
             // 
@@ -471,10 +519,11 @@
             // 
             tabPage4.Controls.Add(pnGrafico);
             tabPage4.Controls.Add(gridMetrics);
-            tabPage4.Location = new Point(4, 24);
+            tabPage4.Location = new Point(4, 29);
+            tabPage4.Margin = new Padding(3, 4, 3, 4);
             tabPage4.Name = "tabPage4";
-            tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(564, 422);
+            tabPage4.Padding = new Padding(3, 4, 3, 4);
+            tabPage4.Size = new Size(645, 537);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Métricas";
             tabPage4.UseVisualStyleBackColor = true;
@@ -482,9 +531,10 @@
             // pnGrafico
             // 
             pnGrafico.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pnGrafico.Location = new Point(8, 132);
+            pnGrafico.Location = new Point(9, 176);
+            pnGrafico.Margin = new Padding(3, 4, 3, 4);
             pnGrafico.Name = "pnGrafico";
-            pnGrafico.Size = new Size(548, 282);
+            pnGrafico.Size = new Size(626, 376);
             pnGrafico.TabIndex = 9;
             // 
             // gridMetrics
@@ -494,10 +544,12 @@
             gridMetrics.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             gridMetrics.BackgroundColor = Color.White;
             gridMetrics.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridMetrics.Location = new Point(8, 6);
+            gridMetrics.Location = new Point(9, 8);
+            gridMetrics.Margin = new Padding(3, 4, 3, 4);
             gridMetrics.Name = "gridMetrics";
             gridMetrics.ReadOnly = true;
-            gridMetrics.Size = new Size(550, 120);
+            gridMetrics.RowHeadersWidth = 51;
+            gridMetrics.Size = new Size(629, 160);
             gridMetrics.TabIndex = 8;
             // 
             // tmRabiit
@@ -517,15 +569,120 @@
             tmRefreshLogs.Interval = 5000;
             tmRefreshLogs.Tick += tmRefreshLogs_Tick;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { importaçãoToolStripMenuItem, dataViewToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Padding = new Padding(7, 3, 0, 3);
+            menuStrip1.Size = new Size(914, 30);
+            menuStrip1.TabIndex = 2;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // importaçãoToolStripMenuItem
+            // 
+            importaçãoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { viaEXCELToolStripMenuItem, exportarDadosDeEPCToolStripMenuItem, importarImagensToolStripMenuItem });
+            importaçãoToolStripMenuItem.Name = "importaçãoToolStripMenuItem";
+            importaçãoToolStripMenuItem.Size = new Size(100, 24);
+            importaçãoToolStripMenuItem.Text = "Importação";
+            // 
+            // viaEXCELToolStripMenuItem
+            // 
+            viaEXCELToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { produtosSKUToolStripMenuItem, produtosToolStripMenuItem, marcasToolStripMenuItem, deparToolStripMenuItem, gruposToolStripMenuItem, subGruposToolStripMenuItem, eCsToolStripMenuItem });
+            viaEXCELToolStripMenuItem.Name = "viaEXCELToolStripMenuItem";
+            viaEXCELToolStripMenuItem.Size = new Size(243, 26);
+            viaEXCELToolStripMenuItem.Text = "Via Excel";
+            // 
+            // produtosSKUToolStripMenuItem
+            // 
+            produtosSKUToolStripMenuItem.Name = "produtosSKUToolStripMenuItem";
+            produtosSKUToolStripMenuItem.Size = new Size(195, 26);
+            produtosSKUToolStripMenuItem.Text = "Produtos SKU";
+            produtosSKUToolStripMenuItem.Click += produtosSKUToolStripMenuItem_Click;
+            // 
+            // produtosToolStripMenuItem
+            // 
+            produtosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { planilhaAPIToolStripMenuItem, alteraçãoToolStripMenuItem });
+            produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
+            produtosToolStripMenuItem.Size = new Size(195, 26);
+            produtosToolStripMenuItem.Text = "Produtos";
+            // 
+            // planilhaAPIToolStripMenuItem
+            // 
+            planilhaAPIToolStripMenuItem.Name = "planilhaAPIToolStripMenuItem";
+            planilhaAPIToolStripMenuItem.Size = new Size(172, 26);
+            planilhaAPIToolStripMenuItem.Text = "Planilha/API";
+            planilhaAPIToolStripMenuItem.Click += planilhaAPIToolStripMenuItem_Click;
+            // 
+            // alteraçãoToolStripMenuItem
+            // 
+            alteraçãoToolStripMenuItem.Name = "alteraçãoToolStripMenuItem";
+            alteraçãoToolStripMenuItem.Size = new Size(172, 26);
+            alteraçãoToolStripMenuItem.Text = "Alteração";
+            // 
+            // marcasToolStripMenuItem
+            // 
+            marcasToolStripMenuItem.Name = "marcasToolStripMenuItem";
+            marcasToolStripMenuItem.Size = new Size(195, 26);
+            marcasToolStripMenuItem.Text = "Marcas";
+            // 
+            // deparToolStripMenuItem
+            // 
+            deparToolStripMenuItem.Name = "deparToolStripMenuItem";
+            deparToolStripMenuItem.Size = new Size(195, 26);
+            deparToolStripMenuItem.Text = "Departamentos";
+            // 
+            // gruposToolStripMenuItem
+            // 
+            gruposToolStripMenuItem.Name = "gruposToolStripMenuItem";
+            gruposToolStripMenuItem.Size = new Size(195, 26);
+            gruposToolStripMenuItem.Text = "Grupos";
+            // 
+            // subGruposToolStripMenuItem
+            // 
+            subGruposToolStripMenuItem.Name = "subGruposToolStripMenuItem";
+            subGruposToolStripMenuItem.Size = new Size(195, 26);
+            subGruposToolStripMenuItem.Text = "Sub-Grupos";
+            // 
+            // eCsToolStripMenuItem
+            // 
+            eCsToolStripMenuItem.Name = "eCsToolStripMenuItem";
+            eCsToolStripMenuItem.Size = new Size(195, 26);
+            eCsToolStripMenuItem.Text = "EC's";
+            // 
+            // exportarDadosDeEPCToolStripMenuItem
+            // 
+            exportarDadosDeEPCToolStripMenuItem.Name = "exportarDadosDeEPCToolStripMenuItem";
+            exportarDadosDeEPCToolStripMenuItem.Size = new Size(243, 26);
+            exportarDadosDeEPCToolStripMenuItem.Text = "Exportar dados de EPC";
+            exportarDadosDeEPCToolStripMenuItem.Click += exportarDadosDeEPCToolStripMenuItem_Click;
+            // 
+            // dataViewToolStripMenuItem
+            // 
+            dataViewToolStripMenuItem.Name = "dataViewToolStripMenuItem";
+            dataViewToolStripMenuItem.Size = new Size(91, 24);
+            dataViewToolStripMenuItem.Text = "Data View";
+            // 
+            // importarImagensToolStripMenuItem
+            // 
+            importarImagensToolStripMenuItem.Name = "importarImagensToolStripMenuItem";
+            importarImagensToolStripMenuItem.Size = new Size(243, 26);
+            importarImagensToolStripMenuItem.Text = "Importar Imagens";
+            importarImagensToolStripMenuItem.Click += importarImagensToolStripMenuItem_Click;
+            // 
             // MDI
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(tabControl);
             Controls.Add(panel1);
+            Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = menuStrip1;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "MDI";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Conector4";
@@ -547,7 +704,10 @@
             groupBox1.PerformLayout();
             tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gridMetrics).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -594,5 +754,20 @@
         private DataGridView GridServico;
         private Button btnRefreshSer;
         private Panel pnGrafico;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem importaçãoToolStripMenuItem;
+        private ToolStripMenuItem viaEXCELToolStripMenuItem;
+        private ToolStripMenuItem produtosSKUToolStripMenuItem;
+        private ToolStripMenuItem produtosToolStripMenuItem;
+        private ToolStripMenuItem marcasToolStripMenuItem;
+        private ToolStripMenuItem deparToolStripMenuItem;
+        private ToolStripMenuItem gruposToolStripMenuItem;
+        private ToolStripMenuItem subGruposToolStripMenuItem;
+        private ToolStripMenuItem eCsToolStripMenuItem;
+        private ToolStripMenuItem dataViewToolStripMenuItem;
+        private ToolStripMenuItem planilhaAPIToolStripMenuItem;
+        private ToolStripMenuItem alteraçãoToolStripMenuItem;
+        private ToolStripMenuItem exportarDadosDeEPCToolStripMenuItem;
+        private ToolStripMenuItem importarImagensToolStripMenuItem;
     }
 }

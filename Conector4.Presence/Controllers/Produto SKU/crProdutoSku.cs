@@ -22,7 +22,7 @@ namespace Conector4.Presence.Controllers.NovaPasta
 
             try
             {
-                var body = new { data_at = "2020-01-01" };
+                var body = new { data_at = "2026-01-09" };
                 var result = await _api.PostAsync("PRODUTOS_SKU", body, offset);
                 if (result == null)
                     return (false, null, "Resultado nulo da API");

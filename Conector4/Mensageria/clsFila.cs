@@ -5,6 +5,9 @@ using System.Net.Http.Json;
 using System.Text;
 using Conector4.General.Elastic_Search;
 using Conector4.Presence.Controllers.PRODUTOS_TAMANHO;
+using Conector4.Presence.Controllers.Fornecedores;
+using Conector4.Presence.Controllers.Estoque;
+using Conector4.Presence.Controllers.Produtos;
 
 namespace Conector4.Mensageria
 {
@@ -94,6 +97,18 @@ namespace Conector4.Mensageria
                 _ = RunConsumer("Presence.Produtos_Tamanho",
                     () => new crProdutos_Recebe(config.getConfigBD()),
                     (repo, msg) => repo.Importar(msg), workers: 5);
+
+                _ = RunConsumer("Presence.TabFornecedores", () => new crInFornecedores(config.getConfigBD()),
+                    (repo, msg) => repo.ImportarAsync(msg), workers: 5);
+
+                _ = RunConsumer("Presence.Estoque", () => new crEstoque(),
+                    (repo, msg) => repo.Insert(msg), workers: 5);
+
+                _ = RunConsumer("Presence.Produtos", () => new crProdutos(),
+                    (repo, msg) => repo.Insert(msg), workers: 5);
+
+                _ = RunConsumer("Presence.VendasHeader", () => new crVendaHeader(),
+                    (repo, msg) => repo.Insert(msg), workers: 5);
 
                 return Task.CompletedTask;
             }
